@@ -21,4 +21,37 @@ describe Solver do
       end
     end
   end
+
+  describe '#reverse' do
+    context 'when given "hello"' do
+      it 'returns "olleh"' do
+        expect(Solver.new.reverse('hello')).to eq('olleh')
+      end
+    end
+  end
+
+  describe '#fizzbuzz' do
+    context 'when given a integer that is divisible by 3 and 5' do
+      it 'returns "fizzbuzz"' do
+        expect(Solver.new.fizzbuzz(15)).to eq('fizzbuzz')
+      end
+    end
+  end
+  context 'when given a integer that is divisible by 3' do
+    it 'returns "fizz"' do
+      expect(Solver.new.fizzbuzz(9)).to eq('fizz')
+    end
+  end
+
+  context 'when given "hello"' do
+    it 'returns "buzz"' do
+      expect(Solver.new.fizzbuzz(20)).to eq('buzz')
+    end
+  end
+
+  context 'when given a integer that is not divisible by 3 or 5 or both' do
+    it 'returns string of the evaluated number' do
+      expect(Solver.new.fizzbuzz(11)).to eq('11')
+    end
+  end
 end
