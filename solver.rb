@@ -1,11 +1,11 @@
 class Solver
-  def factorial(n)
-    if n < 0
-      raise ArgumentError, "n must be a positive integer"
-    elsif n == 0
+  def factorial(number)
+    if number.negative?
+      raise ArgumentError, 'number must be a positive integer'
+    elsif number.zero?
       1
     else
-      (1..n).reduce(:*)
+      (1..number).reduce(:*)
     end
   end
 
@@ -13,15 +13,15 @@ class Solver
     word.reverse
   end
 
-  def fizzbuzz(n)
-    if n % 15 == 0
-      "fizzbuzz"
-    elsif n % 3 == 0
-      "fizz"
-    elsif n % 5 == 0
-      "buzz"
+  def fizzbuzz(number)
+    if (number % 15).zero?
+      'fizzbuzz'
+    elsif (number % 3).zero?
+      'fizz'
+    elsif (number % 5).zero?
+      'buzz'
     else
-      n.to_s
+      number.to_s
     end
   end
 end
